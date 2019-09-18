@@ -1,0 +1,30 @@
+steps:
+  - label: launch test pipeline
+    agents:
+      queue: bootstrap
+    commands:
+      - "echo launch buildkite-base-agent bootstrap.yaml"
+  - label: test
+    agents:
+      queue: bootstrap
+    commands:
+      - "echo $VAL1"
+      - "echo $VAL2"
+      - "cat ~/.aws/credentials"
+  # - label: lint
+  #   agents:
+  #     queue: bootstrap
+  #   commands:
+  #     - "hadolint Dockerfile"
+  # - label: build
+  #   agents:
+  #     queue: bootstrap
+  #   commands:
+  #     - "docker build -t test/buildkite-remote-docker:$BUILDKITE_COMMIT ."
+  # - label: publish
+  #   agents:
+  #     queue: bootstrap
+  #   commands:
+  #     - "echo $NITE"
+  #     - "echo $NITETIME"
+      #- "echo $QUAY_DEPLOY_PASSWORD | docker login -u $QUAY_DEPLOY_USER --password-stdin quay.io"
