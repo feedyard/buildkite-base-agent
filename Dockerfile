@@ -1,4 +1,4 @@
-FROM quay.io/feedyard/buildkite-remote-docker:0.0.1
+FROM quay.io/feedyard/buildkite-remote-docker:0.1.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
@@ -56,6 +56,7 @@ RUN pip install \
     apk del build-dependencies
 
 COPY ./hooks/environment.sh /buildkite/hooks/environment.sh
+RUN  chmod +x /buildkite/hooks/environment.sh
 
 VOLUME /buildkite
 WORKDIR /buildkite
