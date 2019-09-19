@@ -55,8 +55,8 @@ RUN pip install \
            /tmp/* && \
     apk del build-dependencies
 
-COPY ./hooks/environment.sh /buildkite/hooks/environment.sh
-RUN  chmod +x /buildkite/hooks/environment.sh
+#COPY ./hooks/environment.sh /buildkite/hooks/environment.sh
+#RUN  chmod +x /buildkite/hooks/environment.sh
 
 VOLUME /buildkite
 WORKDIR /buildkite
