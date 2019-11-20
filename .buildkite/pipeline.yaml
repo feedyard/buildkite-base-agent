@@ -1,6 +1,7 @@
 steps:
 
-  - name: "test plugin"
+  - label: "test plugin"
+    plugins:
       - feedyard/buildkite-plugin-hadolint
   - wait
   - name: "Build :docker: image and push it to registry :rocket:"
