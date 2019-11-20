@@ -2,7 +2,7 @@ steps:
 
   - label: "test plugin"
     plugins:
-      - feedyard/buildkite-plugin-hadolint
+      - https://github.com/feedyard/buildkite-plugin-hadolint
   - wait
   - name: "Build :docker: image and push it to registry :rocket:"
     command: .buildkite/build.sh buildkite-base-agent
