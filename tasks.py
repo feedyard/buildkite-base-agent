@@ -19,3 +19,15 @@ def runlocalagent(ctx):
              "--tags \"queue=bootstrap\" "
 
     ctx.run(LAUNCH)
+
+# run the standard Buildkite
+@task
+def runvendoragent(ctx):
+    LAUNCH = "docker run -v \"/var/run/docker.sock:/var/run/docker.sock\" " \
+             "-e VAL1 " \
+             "-e VAL2 " \
+             "-d -t buildkite/agent:3 start " \
+             "--token $BUILDKITE_AGENT_TOKEN " \
+             "--tags \"queue=vendor\" "
+
+    ctx.run(LAUNCH)
